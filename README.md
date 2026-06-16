@@ -1,5 +1,3 @@
-# kit-iot-automatizacion
-
 # Kit de Desarrollo IoT y Automatización (ESP32)
 
 Este repositorio contiene el material didáctico, esquemas de hardware y códigos de ejemplo para la tarjeta de desarrollo basada en ESP32, diseñada específicamente para el aprendizaje de sistemas embebidos, automatización e Internet de las Cosas (IoT) en bachillerato técnico.
