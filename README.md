@@ -40,6 +40,8 @@ Este repositorio contiene el material didáctico, esquemas de hardware y código
 | **Entradas de Sensores** | `DIST_TRIG` | Salida Digital | `GPIO 12` |
 | **Entradas de Sensores** | `DIST_ECHO` | Entrada Digital | `GPIO 13` |
 
+<img width="1104" height="1194" alt="entradas_salidas" src="https://github.com/user-attachments/assets/4b0666d6-605f-4055-b813-24ac7cf266e3" />
+
 ---
 
 ## 📚 Índice de Prácticas Didácticas
@@ -54,11 +56,27 @@ Las prácticas están organizadas de menor a mayor complejidad utilizando los no
 
 ---
 
-## 🛠️ Requisitos de Software
-1. Descargar e instalar [Arduino IDE](https://arduino.cc).
-2. Agregar el soporte para tarjetas ESP32 en el Gestor de Tarjetas del IDE.
-3. Instalar las siguientes librerías desde el Gestor de Librerías oficial:
-   * **DHT sensor library** (por Adafruit)
-   * **ESP32Servo** (por Kevin McGrath) -> Necesaria para el control en bornes de actuadores PWM.
-   * **LiquidCrystal_I2C** (Si se implementa el uso de pantallas en la salida J14)
+## 🛠️ Requisitos de Software y Configuración
 
+### 1. Instalación de Controladores (Drivers)
+Para que la computadora reconozca la tarjeta ESP32 a través del cable USB, es necesario instalar el driver del chip puente integrado en tu módulo (comúnmente CH340 o CP210X).
+* 📥 [Descargar Driver CH340 (Windows/Mac)](https://xn--w-drivers-0n4x760v.com) -> *Común en NodeMCU económicos.*
+* 📥 [Descargar Driver CP210x (Silicon Labs)](https://silabs.com) -> *Común en módulos DOIT.*
+
+### 2. Configuración en Arduino IDE
+1. Descarga e instala [Arduino IDE](https://arduino.cc).
+2. Ve a **Archivo** > **Preferencias** y en el campo *Gestor de URLs Adicionales de Tarjetas* pega el siguiente enlace:
+   `https://githubusercontent.com`
+3. Ve a **Herramientas** > **Placa** > **Gestor de Tarjetas**, busca `esp32` e instálalo.
+4. Selecciona la placa: **ESP32 Dev Module** (o NodeMCU-32S) antes de cargar tus códigos.
+
+### 📚 3. Lista Oficial de Librerías y Sensores Compatibles
+Los alumnos deben instalar estas librerías desde el *Gestor de Librerías* del IDE (Ctrl + Mayús + I) para habilitar los sensores del kit:
+
+| Sensor / Actuador | Bornera en PCB | Librería Oficial Necesaria | Autor | Propósito |
+| :--- | :--- | :--- | :--- | :--- |
+| **Sensor de Clima** | `SENSOR_DIG_1 / 2` | **DHT sensor library** | Adafruit | Lectura de temperatura y humedad (DHT11/DHT22/AM2302) |
+| **Sensor de Temperatura**| `SENSOR_DIG_3` | **DallasTemperature** | Miles Burton | Lectura de temperatura industrial (DS18B20) |
+| **Sensor de Gases/Humo** | `SENSOR_ANALOG` | **MQUnifiedsensor** | Miguel Krumenacker| Calibración y lectura de PPM (MQ2, MQ135, etc.) |
+| **Servomotores** | `PWM_OUT_1 / 2` | **ESP32Servo** | Kevin McGrath | Control preciso de posición de servos de 0° a 180° |
+| **Pantalla de Texto** | `BUS_SDA / SCL` | **LiquidCrystal_I2C** | Frank de Brabander| Despliegue de datos en pantallas LCD 16x2 o 20x4 I2C |
