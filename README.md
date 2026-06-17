@@ -60,7 +60,7 @@ Las prácticas están organizadas de menor a mayor complejidad utilizando los no
 
 ### 1. Instalación de Controladores (Drivers)
 Para que la computadora reconozca la tarjeta ESP32 a través del cable USB, es necesario instalar el driver del chip puente integrado en tu módulo (comúnmente CH340 o CP210X).
-* 📥 [Descargar Driver CH340 (Windows/Mac)](https://xn--w-drivers-0n4x760v.com) -> *Común en NodeMCU económicos.*
+* 📥 [Descargar Driver CH340 (Sitio Oficial WCH)](https://wch-ic.com) -> *Común en NodeMCU económicos.*
 * 📥 [Descargar Driver CP210x (Silicon Labs)](https://silabs.com) -> *Común en módulos DOIT.*
 
 ### 2. Configuración en Arduino IDE
