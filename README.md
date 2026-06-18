@@ -40,7 +40,7 @@ Este repositorio contiene el material didáctico, esquemas de hardware y código
 | **Entradas de Sensores** | `DIST_TRIG` | Salida Digital | `GPIO 12` |
 | **Entradas de Sensores** | `DIST_ECHO` | Entrada Digital | `GPIO 13` |
 
-<img width="1104" height="1194" alt="entradas_salidas" src="https://github.com/user-attachments/assets/4b0666d6-605f-4055-b813-24ac7cf266e3" />
+<img width="2058" height="1749" alt="Copia de entradas_salidas" src="https://github.com/user-attachments/assets/66a89df3-e098-4758-8e9d-91df4791bdef" />
 
 ---
 
